@@ -1,0 +1,20 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+      # Additional modules containing boards/shields/custom code can be listed here as well.
+      # See:
+      # - https://zmk.dev/docs/features/modules
+      # - https://docs.zephyrproject.org/3.5.0/develop/west/manifest.html#projects
+  projects:
+    - name: eyelash_corne
+      url: https://github.com/a741725193/zmk-new_corne
+      # Pinned so an upstream push can't break a build that worked yesterday.
+      # Bump deliberately: git ls-remote <url> main
+      revision: ba1eeab627ba94ac46f7768b3ddc01f97873ca87
+    - name: zmk
+      remote: zmkfirmware
+      revision: v0.3.0
+      import: app/west.yml
+  self:
+    path: config
